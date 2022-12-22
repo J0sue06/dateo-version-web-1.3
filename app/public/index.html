@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        { name: <span>Liselotte's System,</span> api-version: <span>1.0</span>, services-status: <span id="status">verificando...</span> }
+    </div>    
+</body>
+</html>
+<script>
+  const status = async () => {
+        $.get( "http://localhost:3000/api/usuarios/services-status", ( data ) => 
+        {
+            $('#status').text(data);           
+        });    
+    };   
+    status();
+</script>
